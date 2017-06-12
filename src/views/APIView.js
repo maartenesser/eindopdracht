@@ -9,16 +9,12 @@ import {View} from 'backbone';
 
 const APIView = Backbone.View.extend({
 
-    templateMatches: '',
-    templateError:'',
-
 
     initialize: function ()
     {
     },
 
     events: {
-        //Waarom pakt hij hier de click niet??
         'click #search':  'getRecipe'
     },
 
