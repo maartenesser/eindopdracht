@@ -15,10 +15,6 @@ const APIView = Backbone.View.extend({
 
     initialize: function ()
     {
-        this.templateMatches = _.template(this.$('#template-recipes').html());
-        this.templateError = _.template(this.$('#template-error').html());
-
-        App.events.on('newClub', this.getRecipe, this);
     },
 
     events: {
@@ -28,10 +24,10 @@ const APIView = Backbone.View.extend({
 
     getRecipe: function(data) {
         alert();
-        // console.log(data.label);
-        // console.log(data.image);
-        // console.log(data.ingredientLines);
-        // console.log(data.url);
+        console.log(data.label);
+        console.log(data.image);
+        console.log(data.ingredientLines);
+        console.log(data.url);
         this.collection.fetch({
             success: (collection) => this.loadRecipesSuccessHandler(collection),
             error: (collection, response) => this.loadRecipesErrorHandler(collection, response),
@@ -46,12 +42,12 @@ const APIView = Backbone.View.extend({
 
     loadRecipesSuccessHandler: function (collection)
     {
-        this.$el.html(this.templateMatches({matches: collection.models}));
+        this.$el.html(this({matches: collection.models}));
     },
 
 
     loadRecipesErrorHandler: function (collection, response) {
-    this.$el.html(this.templateError({message: response.responseJSON.error}));
+    this.$el.html(this({message: response.responseJSON.error}));
     }
     
     //     var searchInput = $('#searchInput').val();
