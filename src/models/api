@@ -1,0 +1,31 @@
+/**
+ * Created by Maarten on 29/05/2017.
+ */
+
+// JSON.stringify(this.toJSON();)
+
+//     function submit() {
+//
+//
+//     var app_id = '37bea647';
+//     var app_key = 'd1fba26f82f34f5f3e035064f33c9ced';
+//     var input = 'cheese';
+//
+//     $.ajax({
+//         url: "https://api.edamam.com/search?q=" + input + "&app_id=" + app_id + "&app_key=" + app_key,
+//         type: 'GET',
+//         dataType: 'json',
+//         success: function (res) {
+//             console.log(res);
+//         }
+//     });
+// }
+
+
+// database mysql
+// php backend
+// post en get
+// User in een post request => opslaan
+// Is er een get request gegevens tonen
+
+

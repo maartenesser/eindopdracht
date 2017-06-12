@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>t.Lijkhuis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">'t Lijkhuis</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#" id="home">Home</a></li>
+                <li><a href="#Recpten" id="Recepten">Recepten</a></li>
+                <li><a href="#API">API</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<br>
+<div id="datum">
+    <h1 id="Date"></h1>
+</div>
+<div id="test">test content</div>
+
+<br>
+<hr>
+<h4>Lijst met alle gebruikers</h4>
+
+<div id="users" class="page">
+    <input type="text" placeholder="Enter friend's name" id="input" />
+    <button id="add-input">Add Friend</button>
+
+    <ul id="users-list">
+    </ul>
+
+</div>
+
+<br>
+<hr>
+<div id="api_container">
+    <h1>API container</h1>
+    <input type="text" id="searchInput">
+    <button id="search" class="btn btn-success">Zoeken</button>
+</div>
+<dvi>
+    <h4>Resultaten</h4>
+    <div id="recipe-results">
+    </div>
+</dvi>
+<hr>
+
+
+<!--<script id="template-matches" type="text/template">-->
+    <!--<% _.each(recipes, function(recipe, index, list){ %>-->
+    <!--<div class="recipe">-->
+        <!--<div class="teams">-->
+            <!--<span class=""><%= recipe.get('label') %></span>-->
+        <!--<span class=""><%= recipe.get('') %></span>-->
+    <!--</div>-->
+        <!--<div class="location">-->
+        <!--<span class="stadium"><%= match.get('stadium') %></span>-->
+        <!--<span class="city"><%= match.get('city') %></span>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<% }); %>-->
+<!--</script>-->
+
+<!--<script id="template-error" type="text/template">-->
+<!--<span class="error"><%= message %></span>-->
+<!--</script>-->
+<script src="dist/bundle.js"></script>
+</body>
+</html>
