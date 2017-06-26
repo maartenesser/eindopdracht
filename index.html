@@ -4,43 +4,43 @@
     <meta charset="UTF-8">
     <title>t.Lijkhuis</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="">
 </head>
 <body>
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">'t Lijkhuis</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#" id="home">Home</a></li>
-                <li><a href="#Recpten" id="Recepten">Recepten</a></li>
-                <li><a href="#API">API</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
 <br>
+
+
+<!--Datum-->
 <div id="datum">
     <h1 id="Date"></h1>
 </div>
-<div id="test">test content</div>
 
 <br>
 <hr>
-<h4>Lijst met alle gebruikers</h4>
 
+
+<!--User List-->
 <div id="users" class="page">
-    <input type="text" placeholder="Enter friend's name" id="input" />
+    <h4>Lijst met alle gebruikers</h4>
+    <input type="text" placeholder="Enter friend's name" id="input"/>
     <button id="add-input">Add Friend</button>
 
     <ul id="users-list">
@@ -48,18 +48,39 @@
 
 </div>
 
+
 <br>
 <hr>
+<!--API-->
+
 <div id="api_container">
     <h1>API container</h1>
     <input type="text" id="searchInput">
     <button id="search" class="btn btn-success">Zoeken</button>
 </div>
-<dvi>
-    <h4>Resultaten</h4>
-    <div id="recipe-results">
-    </div>
-</dvi>
+<h4>Resultaten</h4>
+<div id="results"></div>
+<div id="recipe-results">
+    <script id="template-recipes" type="text/template">
+        <% _.each(recipes, function(match){ %>
+        <div class="container">
+            <div class="col-md-4 portfolio-item">
+                <img class="img-responsive" src="<%= match.attributes.recipe.image%>">
+                <h3>
+                    <a href="<%= match.attributes.recipe.url %>"><%= match.attributes.recipe.label %></a>
+                </h3>
+                <h4>Ingriedients</h4>
+                <p><%= match.attributes.recipe.ingredientLines%></p>
+            </div>
+        </div>
+        <% }); %>
+    </script>
+</div>
+
+<script id="template-error" type="text/template">
+    <span class="error"><%= message %></span>
+</script>
+
 <hr>
 <script src="dist/bundle.js"></script>
 </body>

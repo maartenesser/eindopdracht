@@ -6,38 +6,33 @@ import SaveUsers from '../models/User'
 
 var UserView = Backbone.View.extend({
 
-    tagName: 'lu',
+    tagName: 'ul',
 
     events: {
-        'click #add-input':  'getUser',
-        'click #delete' : 'removeUser'
+        'click #add-input':  'getUser'
     },
-
+    
+// Dit zou vervolgens allemaal via een server moeten gaan en niet via de local storage
+    
+    // initialize view and render model 
     initialize: function() {
         var thisView = this;
         this.userslist = new UserList;
         _.bindAll(this, 'render');
         this.userslist.bind("add", function(model ){
-            alert("It Works!!");
             thisView.render( model );
         })
     },
-    // Get Users from the local storage Waarom werkt het niet?
-    // Hoe kan ik het beste een database hieraan linken?
+    
+    // Get user from local storage
     getUser: function() {
         var user_name = $('#input').val();
         this.userslist.add( {name: user_name} );
         //praten met de local storage server
         
     },
-    removeUser: function(model) {
-       // this.model.get("name").remove();
-       // console.log(this);
-       // console.log('test');
-    },
     
     // Save User to the local storage
-    // Als ik een database heb kan dit makkelijker en kan iedereen dit zien
     saveUser: function () {
         const User = new SaveUsers();
         User.save({
@@ -49,7 +44,7 @@ var UserView = Backbone.View.extend({
     },
 
     render: function( model ) {
-        $("#users-list").append("<ul>"+ model.get("name")+"</ul> <button id='delete'>Delete</button>");
+        $("#users-list").append("<ul>"+ model.get("name")+"</ul>");
         
     }
 

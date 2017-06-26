@@ -9,11 +9,9 @@ let UserList = Backbone.Collection.extend({
 
     },
     
-    //Waarvoor heb ik dit precies nodig?
-    //Wat zijn collections precies?
 
      //model: SaveUsers,
-     localStorage: new LocalStorage('users') // Uniquely identify this
+     localStorage: new LocalStorage('users')
 
 });
 
